@@ -1,0 +1,80 @@
+<mat-sidenav-container class="container">
+  <mat-sidenav class="view"
+    #sidenav
+    mode="side"
+    [opened]="isSidenavOpened"
+  >
+  
+  <div>
+    <h4>Filter by Genre</h4>
+    <mat-checkbox [(ngModel)]="genres.History" (change)="filterBooksByGenre()"> History </mat-checkbox><br/>
+    <mat-checkbox [(ngModel)]="genres.Drama" (change)="filterBooksByGenre()"> Drama </mat-checkbox><br/>
+    <mat-checkbox [(ngModel)]="genres.Romance" (change)="filterBooksByGenre()"> Romance </mat-checkbox><br/>
+    <mat-checkbox [(ngModel)]="genres.Thriller" (change)="filterBooksByGenre()"> Thriller </mat-checkbox><br/>
+    <mat-checkbox [(ngModel)]="genres.Comedy" (change)="filterBooksByGenre()"> Comedy </mat-checkbox><br/>
+  </div>
+
+    <hr/>
+
+    <div>
+      <h4>Filter by Publisher</h4>
+    <mat-checkbox [(ngModel)]="publisher.Laguna" (change)="filterBooksByPublisher()"> Laguna </mat-checkbox><br/>
+    <mat-checkbox [(ngModel)]="publisher.Delfi" (change)="filterBooksByPublisher()"> Delfi </mat-checkbox><br/>
+    </div>
+  
+    <hr/>
+
+    <div>
+      <h4>Filter by year</h4>
+    <mat-form-field>
+      <input matInput type="number" [(ngModel)]="filterYear" placeholder="Year" min="0" (input)="filterByYear()">
+    </mat-form-field>
+    </div>
+
+
+    <div>
+      <h4>Filter by price</h4>
+    <mat-form-field>
+      <input matInput type="number" [(ngModel)]="filterPrice" min="0" placeholder="Max Price" (input)="filterByPrice()">
+    </mat-form-field>
+    </div>
+
+
+    <div>
+      <h4>Filter by pages</h4>
+    <mat-form-field>
+      <input matInput type="number" [(ngModel)]="filterPage" min="0" placeholder="Max Page" (input)="filterByPage()">
+    </mat-form-field>
+    </div>
+
+  
+  </mat-sidenav>
+
+  
+
+  <mat-sidenav-content>
+
+  
+    <div class="wrapper">
+      <div fxLayout fxLayoutAlign="space-between">
+        <header>
+          <button fxLayout="row" mat-icon-button (click)="toggleSidenav()">
+            <span fxLayout="row" class="menu"><mat-icon class="menu">menu</mat-icon>Filter</span> 
+          </button>
+        </header>
+        <mat-form-field class="filter-margin">
+          <input type="search" (keyup)="filterBySearch($any($event.target).value)" matInput placeholder="Search...🔍">
+      </mat-form-field>
+      </div>
+      <section fxLayout="row wrap" fxLayoutAlign="center center"  fxLayoutGap="20px">
+        <app-book *ngFor="let i of bookFiltered" [book] = "i">
+        </app-book>
+      </section>
+    </div>
+  </mat-sidenav-content>
+
+
+
+</mat-sidenav-container>
+
+

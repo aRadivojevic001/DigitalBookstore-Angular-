@@ -1,0 +1,131 @@
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  color: #333;
+  font-size: 13px;
+  margin: 0;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ul {
+  margin: 0;
+}
+
+img {
+  max-width: 100%;
+}
+
+ul {
+  padding-left: 0;
+  margin-bottom: 0;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+.wrapper {
+  background-image: url(../../../assets/images/slika1.png);
+  min-height: 100vh;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+}
+
+.inner {
+  padding: 20px;
+  background: #fff;
+  max-width: 850px;
+  margin: auto;
+  display: flex;
+}
+
+.inner form {
+  width: 50%;
+  padding-top: 36px;
+  padding-left: 45px;
+  padding-right: 45px;
+}
+
+.inner h3 {
+  text-transform: uppercase;
+  font-size: 25px;
+  font-family: "Poppins-SemiBold";
+  text-align: center;
+  margin-bottom: 28px;
+}
+
+.form-group {
+  display: flex;
+}
+
+.form-group mat-form-field {
+  width: 50%;
+}
+
+.form-group mat-form-field:first-child {
+  margin-right: 25px;
+}
+
+.form-wrapper {
+  position: relative;
+}
+
+button {
+  border: none;
+  width: 164px;
+  height: 51px;
+  margin: auto;
+  margin-top: 40px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  background: #333;
+  font-size: 15px;
+  color: #fff;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+}
+
+@media (max-width: 767px) {
+  .inner {
+    display: block;
+  }
+
+  .inner .image-holder {
+    width: 100%;
+  }
+
+  .inner form {
+    width: 100%;
+    padding: 40px 0 30px;
+  }
+
+  button {
+    margin-top: 60px;
+  }
+}
+
+.field {
+  width: 100%;
+}
+
+a {
+  color: black;
+}

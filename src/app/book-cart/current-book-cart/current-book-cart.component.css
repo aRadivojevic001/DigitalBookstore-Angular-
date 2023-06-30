@@ -1,0 +1,15 @@
+.greenButton{
+    color: white;
+    background-color: green;
+}
+.redButton{
+    color : white;
+    background-color: red;
+    margin-left: 5px;
+}
+.firstButtons{
+    padding: 10px;
+}
+.lastButton{
+    margin-right: 5px;
+}

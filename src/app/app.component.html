@@ -1,0 +1,48 @@
+  <mat-toolbar color="my-toolbar-color">
+    <div fxFlex fxLayoutAlign="start">
+      <a routerLink="/">
+        <mat-icon >menu_book</mat-icon>
+        <span >BookStore</span>
+      </a>
+      <a routerLink="/cart" class="cart">
+        <mat-icon >shopping_cart</mat-icon>
+        <span >Cart</span>
+      </a>
+    </div>
+    <div fxFlex fxLayoutAlign="end" fxLayout="row" fxLayoutGap="15px">
+      <!-- <a routerLink="/">
+        <mat-icon >home</mat-icon>
+        <span >Home</span>
+      </a> -->
+      <div class="profile">
+        <mat-icon >person</mat-icon>
+        <span >Profile</span>
+      </div>
+      
+        <!-- Cita id tekuceg korisnika, tj email -->
+      <button mat-raised-button color="warn"
+          (click)="openProfile(this.userService.currentUser.id)">
+          {{ this.userService.currentUser.firstName }}
+      </button>
+    
+      <!-- posto vec koristimo rute nema potrebe da koristimo href vec korsitimo routerLink -->
+      <a routerLink="/signup" >
+        <mat-icon >how_to_reg</mat-icon>
+        <span >Sign-up</span>
+      </a>
+      <a routerLink="/login" >
+        <mat-icon >login</mat-icon>
+        <span >Login</span>
+      </a>
+      <!-- <a routerLink="/" >
+        <mat-icon >logout</mat-icon>
+        <span >Logout</span>
+      </a> -->
+    </div>
+  </mat-toolbar>
+    <router-outlet></router-outlet>
+   
+
+
+
+

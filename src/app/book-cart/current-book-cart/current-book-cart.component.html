@@ -1,0 +1,41 @@
+<mat-table [dataSource]="currentCartSource">
+
+    <ng-container matColumnDef="id">
+        <mat-header-cell *matHeaderCellDef>User</mat-header-cell>
+        <mat-cell *matCellDef>{{ getFirstName() }}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="currentCartBooks">
+        <mat-header-cell *matHeaderCellDef>Products</mat-header-cell>
+        <mat-cell *matCellDef="let element">
+            <div>
+              <ng-container  *ngFor="let item of element?.currentCartBooks">
+                <p><strong>Book Name:</strong> {{ item.book_name }}</p>
+                <p><strong>Author:</strong> {{ item.author }}</p>
+                <p><strong>Published By:</strong> {{ item.published_by }}</p>
+                <p><strong>Published Year:</strong> {{ item.published_year }}</p>
+                <p><strong>Genre:</strong> {{ item.genre }}</p>
+                <p><strong>Price:</strong> {{ item.price | currency:'RSD' }}</p>
+                <p><strong>Pages:</strong> {{ item.pages }}</p>
+                <br/>
+                <br/>
+                
+              </ng-container>
+            </div>
+        </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="totalPrice">
+        <mat-header-cell *matHeaderCellDef>Total price</mat-header-cell>
+        <mat-cell *matCellDef="let element">{{ element.totalPrice | number }} RSD</mat-cell>
+    </ng-container>
+
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+
+    <mat-row *matRowDef="let rows; columns: displayedColumns;"></mat-row>
+</mat-table>
+<div class="firstButtons" fxLayoutAlign="end end" >
+    <button mat-raised-button (click)="transferData()" class="greenButton">Submit</button>
+    <button mat-raised-button (click)="deleteBooks()" class="redButton">Delete books</button>
+</div>

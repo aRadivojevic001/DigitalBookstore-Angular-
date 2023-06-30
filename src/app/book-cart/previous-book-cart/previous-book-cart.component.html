@@ -1,0 +1,31 @@
+<div class="wrapper" fxLayoutAlign="start start">
+  <!-- Uzmi mi cartItem od ovog servisa, cartItem je iterator koji prolazi kroz sve propertije iz cart-a-->
+  <div class="card-container" *ngFor="let cartItem of previousBookCartService.cart">
+    <mat-card>
+      <mat-card-title>Purchase number {{ cartItem.id }}</mat-card-title>
+      <mat-card-content>
+        <!-- Isto kao gore samo kroz niz knjige, gore se prolazi kroz niz porudzbina a ovde kroz niz knjiga u 1 porudzbinbi -->
+        <div *ngFor="let book of cartItem.previousCartBooks">
+          <div class="book-card">
+            <div class="book-image">
+              <img [src]="book.imageURL" alt="Book Image" />
+            </div>
+            <div class="book-details">
+              <p><strong>Book Name:</strong> {{ book.book_name }}</p>
+              <p><strong>Author:</strong> {{ book.author }}</p>
+              <p><strong>Published By:</strong> {{ book.published_by }}</p>
+              <p><strong>Published Year:</strong> {{ book.published_year }}</p>
+              <p><strong>Genre:</strong> {{ book.genre }}</p>
+              <p><strong>Price:</strong> {{ book.price | currency:'RSD' }}</p>
+              <p><strong>Pages:</strong> {{ book.pages }}</p>
+            </div>
+          </div>
+        </div>
+        <p><strong>Total price:</strong> {{cartItem.totalPrice}}</p>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-raised-button class="buttonPurached">Reserved</button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+</div>

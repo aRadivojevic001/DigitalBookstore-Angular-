@@ -1,0 +1,36 @@
+mat-toolbar {
+    font-family: 'Ysabeau SC', sans-serif;
+    background-color: #333D51;;
+    font-size: 20px;
+    height: 60px;
+  }
+  mat-toolbar a {
+    color: white;
+    text-decoration: none;
+  }
+  .wrapper {
+    background-image: url(../assets/images/slika1.png);
+    min-height: 100vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  mat-sidenav-container, mat-sidenav-content, mat-sidenav {
+    height: 100%;
+  }
+  mat-sidenav {
+    width: 200px;
+  }
+  .button{
+    max-width: 10px;
+  }
+  .cart{
+    margin-left: 10px;
+  }
+  .profile{
+    color: white;
+    text-decoration: none;
+  }

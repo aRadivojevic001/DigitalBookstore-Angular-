@@ -1,0 +1,32 @@
+.wrapper {
+  /* background-image: url('../../../assets/images/slika1.png'); */
+  min-height: 100vh;
+  /* background-size: cover;
+  background-repeat: no-repeat; */
+  /* display: flex;
+  align-items: center;
+  justify-content: center; */
+}
+
+.container {
+   background-image: url('../../../assets/images/slika1.png'); 
+   background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.view{
+  opacity: 70%;
+  filter: brightness(80%);
+  padding: 10px; 
+  width: 270px
+}
+
+.filter-margin{
+  margin-top: 20px;
+  margin-right: 20px;
+}
+
+.menu {
+  color: white;
+  font-size: 20px;
+}

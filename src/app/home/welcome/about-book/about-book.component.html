@@ -1,0 +1,22 @@
+<section>
+    <h1 mat-dialog-title><strong>Title: </strong> {{receivedData.BookName}}</h1>
+
+    <mat-dialog-content>
+        <div fxLayout fxLayoutAlign="space-between">
+            <div class="book-details">
+                <p><strong>Author name: </strong> {{receivedData.BookAuthor}}</p>
+                <p><strong>Year:</strong> {{receivedData.BookYear}}</p>
+                <p><strong>Published By:</strong> {{receivedData.BookPublisher}}</p>
+                <p><strong>Genre:</strong> {{receivedData.BookGenre}}</p>
+                <p><strong>Price:</strong> {{ receivedData.BookPrice | currency:'RSD' }}</p>
+                <p><strong>Pages:</strong> {{receivedData.BookPages}}</p>
+            </div>
+            <img [src]="receivedData.BookImageUrl" class="image">
+        </div>    
+    </mat-dialog-content>
+
+    <mat-dialog-actions fxLayoutAlign="center center">
+        <button mat-button [mat-dialog-close]="true">Close</button>
+    </mat-dialog-actions>
+
+</section>

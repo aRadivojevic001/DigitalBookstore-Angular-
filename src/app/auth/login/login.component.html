@@ -1,0 +1,53 @@
+<div class="wrapper">
+  <div class="inner">
+
+    <div class="image-holder">
+
+      <img src="../../../assets/images/slika1.png" alt="">
+
+    </div>
+
+    <form #f="ngForm" (ngSubmit)="onSubmit(f)">
+
+      <h3>Sign in</h3>
+
+      <!-- Email -->
+      <mat-form-field class="form-wrapper field">
+        <input 
+            type="email" 
+            matInput 
+            placeholder="Your email" 
+            ngModel 
+            name="email"
+            required
+            email
+            #emailInput="ngModel">
+        <mat-error *ngIf="emailInput.hasError('required')">Field should not be empty.</mat-error>
+        <mat-error *ngIf="!emailInput.hasError('required')">Please use the correct email format / address.</mat-error>
+
+    </mat-form-field>
+
+      <!-- Sifra -->
+      <mat-form-field hintLabel="Please enter minimum 8 characters" class="form-wrapper field">
+          <input 
+              type="password" 
+              matInput 
+              placeholder="Your password" 
+              ngModel 
+              name="password" 
+              required
+              minlength="8"
+              #passInput="ngModel">
+          <mat-hint align="end">{{ passInput.value?.length }} / 8</mat-hint>
+      </mat-form-field>
+      <!-- Potvrda / submit forme -->
+      <button type="submit" mat-raised-button color="primary" [disabled]="f.invalid">Submit</button>
+
+      <mat-label *ngIf="errorExists"> {{ errorText }} </mat-label>
+      <a routerLink="/signup">Need an account? Go to sign-in</a>
+
+    </form>
+
+</div>
+  </div>
+  

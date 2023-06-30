@@ -1,0 +1,139 @@
+<div class="wrapper">
+  <div class="inner">
+
+    <div class="image-holder">
+  
+      <img src="../../../assets/images/slika1.png" alt="">
+  
+    </div>
+  
+    <form #f="ngForm" (ngSubmit)="onSubmit(f)">
+  
+      <h3>Sign up</h3>
+  
+      <div class="form-group" class="form-group">
+        
+        <!-- Ime -->
+        <mat-form-field>
+          <input 
+              type="text" 
+              matInput 
+              placeholder="Your first name" 
+              ngModel 
+              name="firstName"
+              required
+              #firstnameInput="ngModel">
+          <mat-error *ngIf="firstnameInput.hasError('required')">Field should not be empty.</mat-error>
+    
+      </mat-form-field>
+      
+      <!-- Prezime -->
+      <mat-form-field>
+        <input 
+            type="text" 
+            matInput 
+            placeholder="Your last name" 
+            ngModel 
+            name="lastName"
+            required
+            #lastnameInput="ngModel">
+        <mat-error *ngIf="lastnameInput.hasError('required')">Field should not be empty.</mat-error>
+  
+    </mat-form-field>
+  
+      </div>
+  
+      <!-- Email -->
+      <mat-form-field class="form-wrapper field">
+        <input 
+            type="email" 
+            matInput 
+            placeholder="Your email" 
+            ngModel 
+            name="email"
+            required
+            email
+            #emailInput="ngModel">
+        <mat-error *ngIf="emailInput.hasError('required')">Field should not be empty.</mat-error>
+        <mat-error *ngIf="!emailInput.hasError('required')">Please use the correct email format / address.</mat-error>
+
+    </mat-form-field>
+  
+    <!-- Sifra -->
+     <mat-form-field hintLabel="Please enter minimum 8 characters" class="form-wrapper field">
+          <input 
+              type="password" 
+              matInput 
+              placeholder="Your password" 
+              ngModel 
+              name="password" 
+              required
+              minlength="8"
+              #passInput="ngModel">
+          <mat-hint align="end">{{ passInput.value?.length }} / 8</mat-hint>
+      </mat-form-field>
+      <!-- Adresa -->
+      <mat-form-field class="form-wrapper field">
+        <input 
+            type="text" 
+            matInput 
+            placeholder="Your address" 
+            ngModel 
+            name="adress"
+            required
+            #addressInput="ngModel">
+        <mat-error *ngIf="addressInput.hasError('required')">Field should not be empty.</mat-error>
+  
+    </mat-form-field>
+    <!-- Broj telefona -->
+    <mat-form-field class="form-wrapper field">
+      <input 
+          type="text" 
+          matInput 
+          placeholder="Your phone" 
+          ngModel 
+          name="phoneNumber"
+          required
+          #phoneInput="ngModel">
+      <mat-error *ngIf="phoneInput.hasError('required')">Field should not be empty.</mat-error>
+
+  </mat-form-field>
+      
+    <!-- Zanr knjige-->
+    <mat-form-field class="form-wrapper field">
+      <mat-select placeholder="Choose genres:" ngModel name="genre">
+          <mat-option value="history">
+              History
+          </mat-option>
+          <mat-option value="drama">
+              Drama
+          </mat-option>
+          <mat-option value="romance">
+              Romance
+          </mat-option>
+          <mat-option value="thriller">
+              Thriller
+          </mat-option>
+          <mat-option value="comedy">
+              Comedy
+          </mat-option>
+      </mat-select>
+  </mat-form-field>
+  <br/>
+  
+      <a routerLink="/login">Already have account? Go to login</a>
+  
+      <button 
+        mat-raised-button color="primary"
+        type="submit" 
+        mat-raised-button 
+        color="primary" 
+        [disabled]="f.invalid">Register</button>
+
+      <!-- ako postoji greska polje postaje true i vraca ovde  -->
+      <mat-label *ngIf="errorExists">{{ errorText }}</mat-label>
+  
+    </form>
+  
+  </div>
+</div>

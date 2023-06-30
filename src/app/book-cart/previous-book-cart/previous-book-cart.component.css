@@ -1,0 +1,40 @@
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .card-container {
+    margin: 10px;
+  }
+  
+  .book-card {
+    display: flex;
+    margin-bottom: 10px;
+  }
+  
+  .book-image {
+    width: 100px;
+    margin-right: 10px;
+  }
+  
+  .book-image img {
+    width: 100%;
+  }
+  
+  .book-details p {
+    margin: 0;
+  }
+  .buttonPurached{
+    color: white;
+    background-color: green;
+    margin: auto;
+  }
+  .wrapper {
+    background-image: url(../../../assets/images/slika1.png);
+    min-height: 100vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    align-items: start;
+    overflow: hidden;
+  }
